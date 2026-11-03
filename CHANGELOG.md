@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.1] - 2026-11-03
+
+### Fixed
+- Always listed under Tools → Games → Party & quiz, never under "Other",
+  whichever game's copy of the shared category table the reader loaded.
+
 ## [1.0.0] - 2026-11-03
 
 ### Added

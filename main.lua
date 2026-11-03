@@ -9,6 +9,7 @@ local function lrequire(name)
     return package.loaded[key]
 end
 
+local GamesMenu  = require("games_menu")
 local PluginBase = require("plugin_base")
 local _          = require("i18n")
 
@@ -24,6 +25,18 @@ local ScoreSheet = PluginBase:extend{
 
 function ScoreSheet:createScreen()
     return Screen:new{ plugin = self }
+end
+
+-- Listed under Party & quiz whatever game_categories.lua copy a device
+-- loaded first: that table is one shared module, and an older copy from
+-- another game would not know this plugin and file it under "Other".
+function ScoreSheet:addToMainMenu(menu_items)
+    GamesMenu.add(menu_items, {
+        id       = self:getPluginId(),
+        label    = self.menu_text,
+        category = "party",
+        launch   = function() self:showGame() end,
+    })
 end
 
 return ScoreSheet
