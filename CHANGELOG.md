@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.0.2] - 2026-11-04
+
+### Changed
+- Uses less memory: the tool loads when you open it, not when KOReader
+  starts, so it no longer takes memory or startup time while unused.
+
 ## [1.0.1] - 2026-11-03
 
 ### Fixed
